@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CountryState</string>
+    <string name="txt_loading_title">Loading…</string>
+    <string name="txt_loading_subtitle">Please wait while we are fetching your content</string>
+    <string name="txt_error_title">Something went wrong</string>
+    <string name="txt_error_subtitle">Please retry in some time</string>
+    <string name="txt_flag_cd">flag</string>
+    <string name="txt_countries">Countries</string>
+    <string name="txt_phone_code_with_code">Phone code : +%s</string>
+    <string name="txt_retry">Retry</string>
+    <string name="txt_no_state_found">No State Found</string>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/loadingView"
+        android:layout_width="@dimen/dimens_0"
+        android:layout_height="@dimen/dimens_0"
+        layout="@layout/view_loading"
+        tools:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <include
+        android:id="@+id/errorView"
+        android:layout_width="@dimen/dimens_0"
+        android:layout_height="@dimen/dimens_0"
+        layout="@layout/view_error"
+        tools:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="@dimen/dimens_0"
+        android:layout_height="@dimen/dimens_0"
+        android:padding="@dimen/dimens_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/countryFlagImage"
+            android:layout_width="@dimen/dimens_80"
+            android:layout_height="@dimen/dimens_60"
+            tools:src="@drawable/ic_launcher_background"
+            android:scaleType="fitXY"
+            android:padding="@dimen/dimens_1"
+            android:background="@drawable/generic_border"
+            android:contentDescription="@string/txt_flag_cd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/screenTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Jaipur"
+            android:textSize="@dimen/text_30"
+            android:layout_marginStart="@dimen/dimens_16"
+            app:layout_constraintTop_toTopOf="@id/countryFlagImage"
+            app:layout_constraintBottom_toBottomOf="@id/countryFlagImage"
+            app:layout_constraintStart_toEndOf="@id/countryFlagImage"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStates"
+            android:layout_width="@dimen/dimens_0"
+            android:layout_height="@dimen/dimens_0"
+            android:layout_marginTop="@dimen/dimens_16"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/countryFlagImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/noState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_20"
+            android:text="@string/txt_no_state_found"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/countryFlagImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
